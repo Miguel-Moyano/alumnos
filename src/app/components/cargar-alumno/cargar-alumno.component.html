@@ -1,0 +1,31 @@
+<div class="container">
+    <div class="row">
+        <div class="col-4">
+            <form #materiaForms="ngForm" (ngSubmit)="onSubmit(materiaForms)">
+                <p>
+                    <label for="nombre">Nombre Materia</label>
+                    <input type="text" name="nombre" #nombre="ngModel" [(ngModel)]="materia.nombre">
+                    <span *ngIf="nombre.touched && !nombre.valid"> El nombre es obligatorio!
+                    </span>
+
+                </p>
+                <p>
+                    <label for="can_alumnos">Cantidad de Alumnos</label>
+                    <input type="text" name="can_alumnos" #can_alumnos="ngModel" [(ngModel)]="materia.can_alumnos">
+                </p>
+                <p>
+                    <label for="profesor">Nombre del Profesor</label>
+                    <input type="text" name="profesor" #profesor="ngModel" [(ngModel)]="materia.profesor">
+                </p>
+                <input class="btn btn-primary" type="submit" value="Guardar" [disabled]="!materiaForms.form.valid">
+
+
+
+            </form>
+
+
+
+        </div>
+
+    </div>
+</div>
